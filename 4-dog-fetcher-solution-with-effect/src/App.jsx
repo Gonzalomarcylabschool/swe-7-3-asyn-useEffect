@@ -10,6 +10,8 @@ function App() {
   // Always create state to store any errors
   const [error, setError] = useState('');
 
+ 
+
   useEffect(() => {
     const doFetch = async () => {
       const [data, error] = await fetchData(DOG_API);

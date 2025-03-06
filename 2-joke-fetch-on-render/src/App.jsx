@@ -20,6 +20,7 @@ function App() {
   const [joke, setJoke] = useState();
   const [error, setError] = useState('');
 
+  
   useEffect(() => {
     const doFetch = async () => {
       const [data, error] = await fetchData(JOKE_API_URL);
@@ -27,7 +28,7 @@ function App() {
       if (error) setError(error);
     }
     doFetch();
-  }, []) // <-- run the effect once
+  }, [error]) // <-- run the effect once
   // When does useEffect execute the effect?
   // When the component it is in is rendered
 

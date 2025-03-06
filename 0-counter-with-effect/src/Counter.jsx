@@ -6,7 +6,7 @@ function Counter() {
 
   console.log("render");
 
-  useEffect(() => {
+  useEffect(() => {// 
     document.title = count; // the effect
     console.log("effect ran");
   }, [count]); // the dependencies
@@ -15,7 +15,8 @@ function Counter() {
     <>
       <input onChange={(e) => setName(e.target.value)} type='text'/>
       <p>{name}</p>
-      <button onClick={() => setCount(count + 1)}>+</button>
+      {/* What about the following line of code should we change? Why? */}
+      <button onClick={() => setCount((currentCount) => currentCount +1)}>+</button> 
       <p>{count}</p>
     </>
   )
